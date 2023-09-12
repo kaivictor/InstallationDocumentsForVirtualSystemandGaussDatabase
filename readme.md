@@ -2,7 +2,7 @@
 
 # 虚拟机安装虚拟系统并安装openGauss和使用DataStudio连接
 
-> 2023年9月11日 Kai 未经授权，拒绝转载
+> 2023年9月11日 Kai 未经授权，拒绝转载 （如果你在这无法正常阅读，请把本仓库下载下来，我可能不会来修改图片链接了）
 
 本教程包含下载虚拟机程序、安装虚拟机（openEuler）、安装openGauss、配置gauss访问、下载DataStudio、连接数据库等几个内容
 
@@ -18,11 +18,11 @@
 
 点击“Download”进去下载界面
 
-![Image](assets/image-2023090200825520.png)
+![Image](./assets/image-2023090200825520.png)
 
 在下载页面选择适合自己系统的版本下载
 
-![image-20230910200901403](assets/image-20230910200901403.png)
+![image-20230910200901403](./assets/image-20230910200901403.png)
 
 运行安装程序，安装VirtualBox。
 

@@ -93,8 +93,9 @@
 ```
 [root@openGaussMachine ~] #
 
-# 设置侦听地址和账户加密方式（这里使用我上面设置的安装路径，下同）
-vi "/gaussdb/data/openGuassMachine/postgresql.conf"
+# 设置侦听地址和账户加密方式（这里是22/23系统默认路径，下同）
+vim "/var/lib/opengauss/data/postgresql.conf"
+# vi "/gaussdb/data/openGuassMachine/pg_hba.conf"  # 这个是我上面设置的安装路径（下同）
 
 # --------- 这里要编辑文件，编辑、保存方式不再赘述 ---------
 # 找到 listen_addresses 改为 '*'
@@ -104,7 +105,8 @@ password_encryption_type = 0  # 设置加密方式（这句不是命令，是样
 # ----------------------- 保存 -----------------------
 
 # 设置访问许可
-vi "/gaussdb/data/openGuassMachine/pg_hba.conf"
+vim /var/lib/opengauss/data/pg_hba.conf
+#vi "/gaussdb/data/openGuassMachine/pg_hba.conf"
 # ----------------------- 编辑 -----------------------
 # 添加IP（这里设置允许全部IP），使用MD5加密
 host	all		all		0.0.0.0/0		md5

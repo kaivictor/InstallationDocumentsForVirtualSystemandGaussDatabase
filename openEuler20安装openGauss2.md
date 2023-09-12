@@ -1,6 +1,6 @@
 # openEuler20安装openGauss2
 
-> 2023年9月10日 Kai
+> 2023年9月10日 Kai 未经授权，谢绝转载
 
 本教程介绍了如何在 openEuler20上安装openGauss2，在openEuler22/23上已经可以自带openGauss，我推荐您使用22/23或更高版本
 

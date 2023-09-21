@@ -93,6 +93,8 @@
 ```
 [root@openGaussMachine ~] #
 
+ps ux | grep gauss  # 筛选gauss进程，查看gauss进程是否存在（不以为gauss服务正常，存在只能说明他运行了）
+
 # 设置侦听地址和账户加密方式（这里是22/23系统默认路径，下同）
 vim "/var/lib/opengauss/data/postgresql.conf"
 # vi "/gaussdb/data/openGuassMachine/pg_hba.conf"  # 这个是我上面设置的安装路径（下同）
@@ -118,10 +120,11 @@ systemctl stop firewalld.service
 
 su - opengauss  # 进入gauss 管理账户
 
-# 重启gauss服务
-gs_om -t stop  # 关闭服务
-gs_om -t start  # 开启服务
-# 或者是 /usr/local/opengauss/bin/gs_ctl restart  # 使用 gs_ctl 重启
+# 重启gauss服务 
+/usr/local/opengauss/bin/gs_ctl restart  # 使用 gs_ctl 重启
+# 20 版本
+# gs_om -t stop  # 关闭服务
+# gs_om -t start  # 开启服务
 
 # 进入初始数据库 postgres （gauss安装完成后自带的数据库）
 gsql -d postgres -p 7654 -r

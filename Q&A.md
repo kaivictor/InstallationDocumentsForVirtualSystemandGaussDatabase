@@ -81,7 +81,7 @@ A 先排除  提示1和提示2
 
 ## Q 出现 could not read file "/var/lib/opengauss/data/postmaster.opts"
 
-A 先检查文件是否存在，如果不存在，你可以试着gs_ctl restart -D /var/lib/opengauss/data恢复它，或者重新安装或找一下有没有备份文件（一般没有，但是你可能编辑过）。
+A 先检查文件是否存在，如果不存在，你可以试着gs_ctl restart -D /var/lib/opengauss/data恢复它，或者创建一个空白文件，或者重新安装或找一下有没有备份文件（一般没有，但是你可能编辑过）。
 如果文件存在，你可能需要检查以下它的权限，需要让omm用户具有读取的权限（比如600），示例代码：
 chmod 600 /var/lib/opengauss/data/postmaster.opts
 或者您看看有没有哪个进程锁定了文件，或者冲突。

@@ -78,6 +78,23 @@ A 先排除  提示1和提示2
 
 请先检查你的虚拟机是否可以访问，使用PuTTY连接以下就行了；如果PuTTY可以登录，那么你排除防火墙的问题，关闭防火墙之后你应该就可以连接上gauss了。还不行的话请检查意见1和意见2.确认没有错误的话再联系我
 
+
+## Q 出现 could not read file "/var/lib/opengauss/data/postmaster.opts"
+
+A 先检查文件是否存在，如果不存在，你可以试着gs_ctl restart -D /var/lib/opengauss/data恢复它，或者重新安装或找一下有没有备份文件（一般没有，但是你可能编辑过）。
+如果文件存在，你可能需要检查以下它的权限，需要让omm用户具有读取的权限（比如600），示例代码：
+chmod 600 /var/lib/opengauss/data/postmaster.opts
+或者您看看有没有哪个进程锁定了文件，或者冲突。
+你还可以查看日志，看看是哪一条配置出了问题。
+
+
+## Q gsql -d postgres -r 显示 fail to connect unkown：7654
+
+A 1.检查服务是否启动
+2.检查你的端口是否是7654（按照教程来的话没问题）
+3.**上次关机前是否关闭Gauss**。根据官方的说法 a.推荐使用Gauss企业版, b.关机前关闭Gauss, c.崩溃了？重装╮(QAQ)╭。
+
+
 # Linux上的错误
 
 ## Q 打开 vim 打开文件空白
